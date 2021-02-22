@@ -11,13 +11,26 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstimezonedetect/1.0.7/jstz.js"></script>
         <script type="text/javascript">
-             window.onload = function begin()
+            window.onload = function begin()
             {
                 var timezone = encodeURIComponent(jstz.determine().name()); 
                 var pref = '<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=';
                 var suff = '&amp;src=ZTFyaDFmN2I2ZnZlaWI5dGtiMWJmY21oMzBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%234285F4&amp;mode=WEEK&amp;showNav=0&amp;showTitle=0&amp;showTabs=1&amp;showPrint=0&amp;showCalendars=0&amp;showDate=1" style="border:solid 1px #777" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>';
                 var iframe_html = pref + timezone + suff;
                 document.getElementById('cal').innerHTML = iframe_html;
+            }
+            function Clipboard_CopyTo(value) {
+            var tempInput = document.createElement("input");
+            tempInput.value = value;
+            document.body.appendChild(tempInput);
+            tempInput.focus();
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            }
+
+            function copy() {
+            Clipboard_CopyTo('https://calendar.google.com/calendar/ical/e1rh1f7b6fveib9tkb1bfcmh30%40group.calendar.google.com/public/basic.ics');
             }
         </script>
         <style>
@@ -78,7 +91,6 @@
             <div id="cal" class="row content"></div>
             <div class="row footer" style="width:100%;text-align:center;">
                 <button onclick="location.href='https://calendar.google.com/calendar/u/0/render?cid=e1rh1f7b6fveib9tkb1bfcmh30%40group.calendar.google.com';" class="btn btn-primary mb-3">Add to Google Calendar</button>
-                <button onclick="location.href='https://calendar.google.com/calendar/ical/e1rh1f7b6fveib9tkb1bfcmh30%40group.calendar.google.com/public/basic.ics';" class="btn btn-primary mb-3">Add to iOS/Mac calendar</button>
             </div>
         </div>
     </body>
