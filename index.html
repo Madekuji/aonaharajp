@@ -19,18 +19,13 @@
                 var iframe_html = pref + timezone + suff;
                 document.getElementById('cal').innerHTML = iframe_html;
             }
-            function Clipboard_CopyTo(value) {
-            var tempInput = document.createElement("input");
-            tempInput.value = value;
-            document.body.appendChild(tempInput);
-            tempInput.focus();
-            tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            }
 
             function copy() {
-            Clipboard_CopyTo('https://calendar.google.com/calendar/ical/e1rh1f7b6fveib9tkb1bfcmh30%40group.calendar.google.com/public/basic.ics');
+                            navigator.clipboard.writeText("https://calendar.google.com/calendar/ical/e1rh1f7b6fveib9tkb1bfcmh30%40group.calendar.google.com/public/basic.ics").then(function() {
+            /* clipboard successfully set */
+            }, function() {
+            /* clipboard write failed */
+            });
             }
         </script>
         <style>
