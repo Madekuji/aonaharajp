@@ -55,7 +55,7 @@
                 var iframe_html = pref + timezone + suff;
                 document.getElementById('cal').innerHTML = iframe_html;
                 // Set the date we're counting down to
-                var countDownDate = new Date("Feb 23, 2021 13:00:00 GMT+0900").getTime();
+                var countDownDate = new Date("Feb 24, 2021 22:00:00 GMT+0900").getTime();
 
                 // Update the count down every 1 second
                 var x = setInterval(function() {
@@ -73,7 +73,7 @@
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
                     
                 // Output the result in an element with id="demo"
-                document.getElementById("countdown").innerHTML = "Next class starts in: " + days + "d " + hours + "h "
+                document.getElementById("countdown").innerHTML = "Next class: Nuance and Linguistics w/ NekoMikuri" + "<br>" + "starts in: " + days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
                     
                 // If the count down is over, write some text 
