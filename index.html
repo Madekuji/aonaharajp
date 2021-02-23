@@ -80,8 +80,13 @@
                 if (distance < 0) {
                     clearInterval(x);
                     document.getElementById("countdown").innerHTML = "CLASS STARTED";
+                    playbell();
                 }
                 }, 1000);
+            }
+            function playbell(){
+                var audio = new Audio('bell.mp3');
+                audio.play();
             }
 
             function copy() {
