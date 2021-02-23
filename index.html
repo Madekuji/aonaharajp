@@ -25,11 +25,40 @@
                 var suff = '&amp;src=ZTFyaDFmN2I2ZnZlaWI5dGtiMWJmY21oMzBAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%234285F4&amp;mode=WEEK&amp;showNav=0&amp;showTitle=0&amp;showTabs=1&amp;showPrint=0&amp;showCalendars=0&amp;showDate=1" style="border:solid 1px #777" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>';
                 var iframe_html = pref + timezone + suff;
                 document.getElementById('cal').innerHTML = iframe_html;
+                // Set the date we're counting down to
+                var countDownDate = new Date("Feb 23, 2021 13:00:00 GMT+0900").getTime();
+
+                // Update the count down every 1 second
+                var x = setInterval(function() {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+                    
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+                    
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    
+                // Output the result in an element with id="demo"
+                document.getElementById("countdown").innerHTML = "Next class starts in: " + days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+                    
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "CLASS STARTED";
+                }
+                }, 1000);
             }
 
             function copy() {
                             navigator.clipboard.writeText("https://calendar.google.com/calendar/ical/e1rh1f7b6fveib9tkb1bfcmh30%40group.calendar.google.com/public/basic.ics").then(function() {
             /* clipboard successfully set */
+            alert("Copied!");
             }, function() {
             /* clipboard write failed */
             });
@@ -89,6 +118,7 @@
                 <h5 style="margin-top: 5px;">
                     Aōnahara JP School Web Schedule
                 </h5>
+                <p id="countdown"></p>
             </div>
             <div id="cal" class="row content"></div>
             <div class="row footer" style="width:100%;text-align:center;">
