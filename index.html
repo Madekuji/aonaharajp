@@ -71,15 +71,15 @@
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                    
+                var className = "Nuance and Linguistics w/ NekoMikuri"
                 // Output the result in an element with id="demo"
-                document.getElementById("countdown").innerHTML = "Next class: Nuance and Linguistics w/ NekoMikuri" + "<br>" + "starts in: " + days + "d " + hours + "h "
+                document.getElementById("countdown").innerHTML = "Next class: " + className + "<br>" + "starts in: " + days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
                     
                 // If the count down is over, write some text 
                 if (distance < 0) {
                     clearInterval(x);
-                    document.getElementById("countdown").innerHTML = "CLASS STARTED";
+                    document.getElementById("countdown").innerHTML = "Next class: " + className + "<br>" + "<b>CLASS IN SESSION</b>";
                     playbell();
                 }
                 }, 1000);
