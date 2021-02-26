@@ -55,7 +55,7 @@
                 var iframe_html = pref + timezone + suff;
                 document.getElementById('cal').innerHTML = iframe_html;
                 // Set the date we're counting down to
-                var countDownDate = new Date("Feb 26, 2021 12:00:00 GMT+0900").getTime();
+                var countDownDate = new Date("Feb 26, 2022 12:00:00 GMT+0900").getTime();
 
                 // Update the count down every 1 second
                 var x = setInterval(function() {
@@ -71,10 +71,11 @@
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                var className = "Pronounciation w/ Puck"
+                var className = "Waiting for next week's schedule..."
                 // Output the result in an element with id="demo"
-                document.getElementById("countdown").innerHTML = "Next class: " + className + "<br>" + "starts in: " + days + "d " + hours + "h "
-                + minutes + "m " + seconds + "s ";
+                /*document.getElementById("countdown").innerHTML = "Next class: " + className + "<br>" + "starts in: " + days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";*/
+                document.getElementById("countdown").innerHTML = "Waiting for next week's schedule..."
                     
                 // If the count down is over, write some text 
                 if (distance < 0) {
