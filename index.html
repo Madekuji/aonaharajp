@@ -57,7 +57,7 @@
                 var iframe_html = pref + timezone + suff;
                 document.getElementById('cal').innerHTML = iframe_html;
                 // Set the date we're counting down to
-                var countDownDate = new Date("Mar 4, 2021 9:00:00 GMT+0900").getTime();
+                var countDownDate = new Date("Mar 5, 2021 12:00:00 GMT+0900").getTime();
 
                 // Update the count down every 1 second
                 var x = setInterval(function() {
@@ -73,7 +73,7 @@
                 var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                var className = "日本語でLet's Play"
+                var className = "Pronounciation"
                 // Output the result in an element with id="demo"
                 document.getElementById("countdown").innerHTML = "Next class: " + className + "<br>" + "starts in: " + days + "d " + hours + "h "
                 + minutes + "m " + seconds + "s ";
